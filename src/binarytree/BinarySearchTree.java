@@ -23,7 +23,8 @@ public class BinarySearchTree <T extends Comparable>{
 			}
 			//int compareResult=
 			return null;
-		}      
+		}  
+		//前序遍历
 		private List<Integer> preorder(BinaryNode root){
 			List<Integer> result=new ArrayList<Integer>();
 			if(root==null){
@@ -43,6 +44,7 @@ public class BinarySearchTree <T extends Comparable>{
 			}
 			return result;
 		}
+		//中序遍历
 		private List<Integer> postorder(BinaryNode root){
 			 List<Integer> result = new ArrayList<Integer>();
 			if(root==null){
@@ -59,6 +61,24 @@ public class BinarySearchTree <T extends Comparable>{
 				if(root.right!=null){
 					stack.push(root.right);
 				}
+			}
+			return result;
+		}
+		//后序遍历
+		private List<Integer> inorder(BinaryNode root){
+			List<Integer> result = new ArrayList<>();
+			if(root==null){
+				return result;
+			}
+			Stack<BinaryNode> stack = new Stack<>();
+			while(root!=null&&!stack.isEmpty()){
+				while(root!=null){
+					stack.push(root);
+					root=root.left;
+				}
+				BinaryNode node=stack.pop();
+				result.add(node.theElement);
+				root=node.right;
 			}
 			return result;
 		}
