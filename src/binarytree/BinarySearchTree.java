@@ -44,7 +44,7 @@ public class BinarySearchTree <T extends Comparable>{
 			}
 			return result;
 		}
-		//中序遍历
+		//后序遍历
 		private List<Integer> postorder(BinaryNode root){
 			 List<Integer> result = new ArrayList<Integer>();
 			if(root==null){
@@ -64,7 +64,7 @@ public class BinarySearchTree <T extends Comparable>{
 			}
 			return result;
 		}
-		//后序遍历
+		//中序遍历
 		private List<Integer> inorder(BinaryNode root){
 			List<Integer> result = new ArrayList<>();
 			if(root==null){
