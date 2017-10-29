@@ -2,7 +2,7 @@ package binarysearch;
 
 import java.util.Arrays;
 
-public class Demo01 {
+public class Demo01{
 	public static void main(String[] args) {
 		int [] arr={12,45,13,2,89,13,45,65,73,14};
 		Arrays.sort(arr);
@@ -28,4 +28,5 @@ public class Demo01 {
 		}
 		return -1;
 	}
+	
 }
