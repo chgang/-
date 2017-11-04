@@ -17,8 +17,30 @@ public class Demo01 {
 		}
 		return arr;
 	}
-	public static void merge(int [] arr,int low,int middle,int high){
+/*	public static void merge(int [] arr,int low,int middle,int high){
 		int [] temp=new int[high-low+1];
+		int i=low;
+		int j=middle+1;
+		int k=0;
+		while(i<=middle&&j<=high){
+			if(arr[i]<arr[j]){
+				temp[k++]=arr[i++];
+			}else{
+				temp[k++]=arr[j++];
+			}
+		}
+		while(i<=middle){
+			temp[k++]=arr[i++];
+		}
+		while(j<=high){
+			temp[k++]=arr[j++];
+		}
+		for(int m=0;m<temp.length;m++){
+			arr[m+low]=temp[m];
+		}
+	}*/
+	public static void merge(int [] arr,int low,int middle,int high){
+		int[] temp=new int[high-low+1];
 		int i=low;
 		int j=middle+1;
 		int k=0;
