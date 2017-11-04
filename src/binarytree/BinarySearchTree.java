@@ -2,7 +2,9 @@ package binarytree;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinarySearchTree <T extends Comparable>{
@@ -139,6 +141,26 @@ public class BinarySearchTree <T extends Comparable>{
 				BinaryNode node= stack.pop();
 				result.add(node.theElement);
 				root=root.right;
+			}
+			return result;
+		}
+		//广度遍历
+		public static List<Integer> breadthFirstSearch(BinaryNode root){
+			List<Integer> result=new ArrayList<>(); 
+			if(root==null){
+				return result;
+			}
+			Queue<BinaryNode> queue = new LinkedList<>();
+			queue.offer(root);
+			while(!queue.isEmpty()){
+				BinaryNode node=queue.poll();
+				result.add(node.theElement);
+				if(node.left!=null){
+					queue.offer(node.left);
+				}
+				if(node.right!=null){
+					queue.offer(node.right);
+				}
 			}
 			return result;
 		}
