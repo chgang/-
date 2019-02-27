@@ -105,6 +105,24 @@ public class BinarySearchTree <T extends Comparable>{
 			}
 			return result;
 		}
+
+		public List<Integer> preOrder(BinaryNode<Integer> root) {
+			List<Integer> resultList = new ArrayList<>();
+			Stack<BinaryNode> stack = new Stack<>();
+			BinaryNode right, left;
+			stack.push(root);
+			while (!stack.empty()) {
+				BinaryNode node = stack.pop();
+				resultList.add(node.theElement);
+				if ((right = node.right) != null) {
+					stack.push(right);
+				}
+				if ((left = node.left) != null) {
+					stack.push(node.left);
+				}
+			}
+			return resultList;
+		}
 		//后序遍历
 		private static List<Integer> postorder(BinaryNode root){
 			List<Integer> result = new ArrayList<>();

@@ -17,12 +17,12 @@ public class Demo01 {
 		}
 		ListNode cur=head;
 		ListNode newHead=null;
-		ListNode oldHead=null;
+		ListNode nextHead=null;
 		while(cur!=null){
-			oldHead=cur.next;
+			nextHead=cur.next;
 			cur.next=newHead;
 			newHead=cur;
-			cur=oldHead;
+			cur=nextHead;
 		}
 		return newHead;
 	}
